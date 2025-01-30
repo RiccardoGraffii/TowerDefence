@@ -1,4 +1,4 @@
-public class Camp {
+public class Campo{
 
     int x = 0;
     int y = 0;
