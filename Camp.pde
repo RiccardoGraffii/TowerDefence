@@ -5,7 +5,7 @@ public class Camp {
     int b = 50; 
     int h = 50;  
 
-    
+
     public Camp() {
         riempimentoCampo();
     }
@@ -29,6 +29,7 @@ public class Camp {
 
     public void draw() {
         for (int i = 0; i < celleDelCampo.size(); i++) {
+            noStroke();
             celleDelCampo.get(i).draw();
         }
     }
