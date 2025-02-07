@@ -20,16 +20,50 @@ public class Camp {
 
     public void riempimentoCampo() {
         for (int y = 0; y < height; y += h) {
-            for (int x = 0; x < width; x += b) {
+
+            if(y == 300){    
+            for (int x = 0; x < width; x += b){
+                if(x <= 250){
+                Cella cella = new Cella(x, y, b, h);
+                cella.setPath(true);
+                celleDelCampo.add(cella);
+                }else{
                 Cella cella = new Cella(x, y, b, h);
                 celleDelCampo.add(cella);
+                }
+
             }
-        }
+            }else if(y == 350){
+            for (int x = 0; x < width; x += b){
+                if(x >= 250){
+                Cella cella = new Cella(x, y, b, h);
+                cella.setPath(true);
+                celleDelCampo.add(cella);
+                }else{
+                Cella cella = new Cella(x, y, b, h);
+                celleDelCampo.add(cella);
+                }
+            }
+            }else{
+                
+                for (int x = 0; x < width; x += b){
+                
+                
+                Cella cella = new Cella(x, y, b, h);
+                celleDelCampo.add(cella);
+                }
+
+
+            }
+            
+            
+            }
+            
     }
 
     public void draw() {
         for (int i = 0; i < celleDelCampo.size(); i++) {
-            noStroke();
+            
             celleDelCampo.get(i).draw();
         }
     }

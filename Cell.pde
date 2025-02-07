@@ -4,12 +4,14 @@ public class Cella {
     int b;  
     int x;   
     int y;  
+    boolean isPath;
 
     public Cella() {
         this.x = 0;
         this.y = 0;
         this.b = 50;
         this.h = 50;
+        this.isPath = false;
     }
 
     public Cella(int x, int y, int b, int h) {
@@ -17,6 +19,7 @@ public class Cella {
         this.y = y;
         this.b = b;
         this.h = h;
+        this.isPath = false;
     }
 
     public int getX() {
@@ -51,12 +54,24 @@ public class Cella {
         this.h = h;
     }
 
+    public boolean isPath() {
+        return this.isPath;
+    }
+
+    public void setPath(boolean isPath) {
+        this.isPath = isPath;
+    }
+
     public void draw() {
-        if (mouseX >= getX() && mouseX <= getX() + getB() && mouseY >= getY() && mouseY <= getY() + getH()) {
-            fill(125, 150, 75);  
+
+        if(isPath){
+            fill(255, 255, 255);
+        }else if (mouseX >= getX() && mouseX <= getX() + getB() && mouseY >= getY() && mouseY <= getY() + getH()) {
+            fill(100, 100, 70);  
         } else {
-            fill(100, 100, 70); 
+            fill(125, 150, 75);
         }
+        noStroke();
         rect(x, y, b, h);
     }
 }
