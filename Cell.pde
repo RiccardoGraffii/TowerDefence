@@ -1,9 +1,9 @@
 public class Cella {
-    int h;  // Altezza della cella
-    int b;  // Larghezza della cella
-    int x;  // Posizione x della cella
-    int y;  // Posizione y della cella
-    boolean isPath;  // Indica se la cella fa parte del percorso
+    int h;  
+    int b;  
+    int x; 
+    int y; 
+    boolean isPath; 
 
     public Cella() {
         this.x = 0;
@@ -63,11 +63,11 @@ public class Cella {
 
     public void draw() {
         if (isPath) {
-            fill(255, 255, 255);  // Colore per le celle del percorso (bianco)
+            fill(255, 255, 255); 
         } else if (mouseX >= getX() && mouseX <= getX() + getB() && mouseY >= getY() && mouseY <= getY() + getH()) {
-            fill(100, 100, 70);  // Colore quando il mouse è sopra la cella
+            fill(100, 100, 70);  
         } else {
-            fill(125, 150, 75);  // Colore di default
+            fill(125, 150, 75);  
         }
         noStroke();
         rect(x, y, b, h);

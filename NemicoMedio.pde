@@ -1,5 +1,5 @@
 
-public class NemicoGrande extends Nemico {
+public class NemicoMedio extends Nemico {
 
     float x;
     float y;
@@ -8,14 +8,14 @@ public class NemicoGrande extends Nemico {
     float velocita; 
 
 
-    NemicoGrande(Camp campo){
+    NemicoMedio(Camp campo){
 
-        super(campo, 50);
+        super(campo, 25);
         this.x = campo.getPercorso().get(1).getX()-50;
-        this.y = campo.getPercorso().get(1).getY()+10;
-        this.b = 15;
-        this.h = 15;
-        this.velocita = 0.7f;
+        this.y = campo.getPercorso().get(1).getY()+20;
+        this.b = 10;
+        this.h = 10;
+        this.velocita = 1;
 
     }
 
@@ -54,7 +54,7 @@ public class NemicoGrande extends Nemico {
     public void move(){
 
 
-        if(getX() >= 250+(getB()/2) && getY()<=360){
+        if(getX() >= 270 && getY()<=375){
 
             setY(getY()+velocita);
 
@@ -69,7 +69,7 @@ public class NemicoGrande extends Nemico {
 
         
         fill(0, 0, 0); 
-        rect(x + b / 2, y + h / 2, b, h); 
+        ellipse(x + b / 2, y + h / 2, b, h); 
 
     }
 

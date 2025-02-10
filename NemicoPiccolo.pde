@@ -1,21 +1,23 @@
 
-public class NemicoGrande extends Nemico {
+public class NemicoPiccolo extends Nemico {
 
     float x;
     float y;
     float b;
     float h;  
-    float velocita; 
+    float velocita;
+    boolean staCurvando;
 
 
-    NemicoGrande(Camp campo){
+    NemicoPiccolo(Camp campo){
 
-        super(campo, 50);
+        super(campo, 10);
         this.x = campo.getPercorso().get(1).getX()-50;
-        this.y = campo.getPercorso().get(1).getY()+10;
-        this.b = 15;
-        this.h = 15;
-        this.velocita = 0.7f;
+        this.y = campo.getPercorso().get(1).getY()+20;
+        this.b = 10;
+        this.h = 10;
+        this.velocita = 1.5f;
+        this. staCurvando = false;
 
     }
 
@@ -54,23 +56,34 @@ public class NemicoGrande extends Nemico {
     public void move(){
 
 
-        if(getX() >= 250+(getB()/2) && getY()<=360){
+        if(getX() >= 270 && getY()<=375){
 
             setY(getY()+velocita);
+            staCurvando = true;
+            
 
         }else{
 
             setX(getX()+velocita);
+            staCurvando = false;
         }
 
     }
 
     public void draw(){
 
-        
-        fill(0, 0, 0); 
-        rect(x + b / 2, y + h / 2, b, h); 
+        fill(0, 0, 255);
+        if(staCurvando){
+            
+            
+            triangle(x, y-5, x+5, y+5, x+10, y-5);
 
+
+        }else{
+         
+        triangle(x, y-5, x, y+5, x+10, y); 
+
+    }
     }
 
 }

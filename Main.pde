@@ -14,7 +14,7 @@ void draw() {
 
     
     if (millis() - ultimoSpawn > intervalloSpawn) {
-        Nemico nemico = new NemicoGrande(campo);  
+        Nemico nemico = new NemicoPiccolo(campo);  
         nemici.add(nemico);
         ultimoSpawn = millis();  
     }
@@ -23,5 +23,6 @@ void draw() {
     for (Nemico nemico : nemici) {
         nemico.move();
         nemico.draw();
+
     }
 }
