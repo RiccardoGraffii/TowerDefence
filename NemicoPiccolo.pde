@@ -39,13 +39,10 @@ public class NemicoPiccolo extends Nemico {
 
     public void draw(){
 
+        if(getVita()>0){
         fill(0, 0, 255);
-        if(staCurvando){
-            
-            
+        if(staCurvando){    
             triangle(x, y-5, x+5, y+5, x+10, y-5);
-
-
         }else{
          
         triangle(x, y-5, x, y+5, x+10, y); 
@@ -54,5 +51,5 @@ public class NemicoPiccolo extends Nemico {
     }
 
 }
-
+}
 

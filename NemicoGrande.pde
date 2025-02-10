@@ -33,12 +33,13 @@ public class NemicoGrande extends Nemico {
 
     public void draw(){
 
-        
+        if(getVita()>0){
         fill(0, 0, 0); 
         rect(x + b / 2, y + h / 2, b, h); 
 
     }
 
+}
 }
 
 

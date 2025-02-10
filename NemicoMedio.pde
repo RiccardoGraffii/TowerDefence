@@ -34,12 +34,12 @@ public class NemicoMedio extends Nemico {
 
     public void draw(){
 
-        
+        if(getVita()>0){
         fill(0, 0, 0); 
         ellipse(x + b / 2, y + h / 2, b, h); 
 
     }
 
-}
+}}
 
 

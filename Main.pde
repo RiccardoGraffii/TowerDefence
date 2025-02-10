@@ -1,5 +1,6 @@
 Camp campo;
 ArrayList<Nemico> nemici = new ArrayList<Nemico>();
+ArrayList<Torre> torri = new ArrayList<Torre>();
 int ultimoSpawn = 0;  
 int intervalloSpawn = 2000;  
 
@@ -19,10 +20,29 @@ void draw() {
         ultimoSpawn = millis();  
     }
 
-  
+    for(Torre t : torri) {
+        t.aggiorna();
+        t.draw();
+    }
+
     for (Nemico nemico : nemici) {
         nemico.move();
         nemico.draw();
 
     }
+}
+
+void mousePressed() {
+   
+    for(Cella c : campo.getCelleDelCampo()) {
+        if(c.isPath()){;
+        
+        if(mouseX > c.getX() && mouseX < c.getX()+c.getB() &&
+           mouseY > c.getY() && mouseY < c.getY()+c.getH()) {
+            torri.add(new Torre(c.getX() + c.getB()/2, c.getY() + c.getH()/2, 80, 5      
+            ));
+            break;
+        }
+    }
+}
 }
