@@ -4,6 +4,9 @@ public class Cella {
     int x; 
     int y; 
     boolean isPath; 
+    Torre torre;
+    boolean hasTorre;
+
 
     public Cella() {
         this.x = 0;
@@ -19,6 +22,20 @@ public class Cella {
         this.b = b;
         this.h = h;
         this.isPath = false;
+        this.hasTorre = false;
+    }
+
+    public boolean hasTorre() {
+        return hasTorre;
+    }
+
+    public Torre getTorre() {
+        return this.torre;
+    }
+
+    public void setTorre(Torre torre) {
+        this.torre = torre;
+        this.hasTorre = true;
     }
 
     public int getX() {
@@ -72,4 +89,14 @@ public class Cella {
         noStroke();
         rect(x, y, b, h);
     }
+
+    public boolean equals(Object obj) {
+
+        Cella cella = (Cella) obj;
+        return getX() == cella.getX() && getY() == cella.getY() && getB() == cella.getB() && getH() == cella.getH();
+              
+    }
+
+
+
 }
