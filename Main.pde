@@ -3,11 +3,12 @@ ArrayList<Nemico> nemici = new ArrayList<Nemico>();
 ArrayList<Torre> torri = new ArrayList<Torre>();
 int ultimoSpawn = 0;  
 int intervalloSpawn = 2000;  
-int denaro = 100;  
+int denaro = 100; 
 int ondata = 1;
-int nemiciRaggiuntiFine = 0; 
-int limiteNemiciPerSconfitta = 10; 
-boolean gameOver = false;  
+int nemiciRaggiuntiFine = 0;  
+int limiteNemiciPerSconfitta = 10;  
+boolean gameOver = false; 
+
 void setup() {
     size(650, 650);
     campo = new Camp();
@@ -33,12 +34,12 @@ void draw() {
     text("Nemici raggiunti: " + nemiciRaggiuntiFine + "/" + limiteNemiciPerSconfitta, 10, 90);
 
     if (millis() - ultimoSpawn > intervalloSpawn) {
-        int tipoNemico = (int) random(0, 3); 
+        int tipoNemico = (int) random(0, 3);  
         Nemico nemico;
         if (tipoNemico == 0) {
             nemico = new NemicoPiccolo(campo);
         } else if (tipoNemico == 1) {
-            nemico = new NemicoMedio(campo); 
+            nemico = new NemicoMedio(campo);  
         } else {
             nemico = new NemicoGrande(campo);
         }
@@ -61,7 +62,7 @@ void draw() {
             nemiciRaggiuntiFine++;
             nemici.remove(i);
             if (nemiciRaggiuntiFine >= limiteNemiciPerSconfitta) {
-                gameOver = true; 
+                gameOver = true;  
             }
         }
 
@@ -73,9 +74,10 @@ void draw() {
     }
 
    
- if (nemici.size() == 0) {
-    ondata++;
-    intervalloSpawn = max(300, intervalloSpawn - 150); 
+    if (nemici.size() == 0) {
+        ondata++;
+        intervalloSpawn = max(500, intervalloSpawn - 100);  
+    }
 }
 
 void mousePressed() {
@@ -99,7 +101,7 @@ void mousePressed() {
                         denaro -= 70;
                     }
                 } else {
-                    if (denaro >= 30) { 
+                    if (denaro >= 30) {  
                         Soldato soldato = new Soldato(c.getX() + c.getB() / 2, c.getY() + c.getH() / 2, 80, 5, 1000);
                         torri.add(soldato);
                         c.setTorre(soldato);
