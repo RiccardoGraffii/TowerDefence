@@ -12,7 +12,7 @@ public class NemicoMedio extends Nemico {
         this.y = campo.getPercorso().get(1).getY()+20;
         this.b = 10;
         this.h = 10;
-        this.velocita = 1;
+        this.velocita = 1.0f;
 
     }
 
