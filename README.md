@@ -1,5 +1,5 @@
 # TowerDefence
-introduzione
+
 Il progetto consiste nello sviluppo di un gioco di tipo Tower Defense realizzato in Processing, un linguaggio di programmazione basato su Java. L’obiettivo del gioco è difendere una base da ondate di nemici che cercano di raggiungere la fine di un percorso predefinito. Il giocatore deve posizionare strategicamente delle torri lungo il percorso per fermare i nemici. Se un numero eccessivo di nemici raggiunge la fine del percorso, il gioco termina con una sconfitta. Il progetto è stato sviluppato suddividendo il codice in diversi file, ognuno dei quali gestisce una specifica funzionalità.
 
 Struttura del Codice
