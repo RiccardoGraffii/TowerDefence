@@ -26,7 +26,7 @@ public class Support extends Torre {
                 celleVicine[2] = celleDelCampo.get(index - width / 50);
                 } // Cella sopra
             if (index < celleDelCampo.size() - width / 50){ 
-            elleVicine[3] = celleDelCampo.get(index + width / 50); 
+            celleVicine[3] = celleDelCampo.get(index + width / 50); 
             }// Cella sotto
         }
 
